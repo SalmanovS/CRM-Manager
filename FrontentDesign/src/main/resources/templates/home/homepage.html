@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+  <link href="/static/css/navbar.css" th:href="@{/css/navbar.css}" rel="stylesheet" />
+</head>
+<body>
+<div th:insert="fragments/home :: navbar"></div>
+<div th:insert="fragments/home :: top-three-blocks"></div>
+</body>
+</html>

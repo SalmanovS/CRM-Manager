@@ -1,0 +1,18 @@
+package com.managerCRM.transport.Repository;
+
+import com.managerCRM.transport.Model.Car;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface CarRepository extends JpaRepository<Car, Integer> {
+
+    List<Car> findByCarStatus(String status);
+
+
+
+
+    
+}

@@ -1,0 +1,55 @@
+body {
+    background: #ebeef5;
+}
+ul {
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 0;
+    width: 250px;
+    background-color: #001f41;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+li a {
+    display: block;
+    color: #aaa8a8;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Times New Roman;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #e88a44;
+    color: #dcdcdc;
+}
+
+.top-three-blocks {
+  height: 100px;
+  width: 300px; /* Можно задать любую другую ширину блока */
+  background: white;
+  margin: 10px;
+  font-size: 18px;
+  font-family: Times New Roman;
+  color: #aaa8a8;
+}
+
+.top-three-blocks-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.table {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+}

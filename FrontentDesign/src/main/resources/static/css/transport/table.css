@@ -1,0 +1,152 @@
+.table{
+	border: 1px solid #eee;
+	table-layout: fixed;
+	width: 100%;
+	margin-bottom: 20px;
+
+}
+.table th {
+	font-weight: bold;
+	padding: 5px;
+	background: #e88a44;
+	border: 1px solid #dddddd;
+}
+.table td{
+	padding: 5px 10px;
+	border: 1px solid #eee;
+	text-align: center;
+	width: 100px;
+}
+.table tbody tr:nth-child(odd){
+	background: #fff;
+}
+.table tbody tr:nth-child(even){
+	background: #F7F7F7;
+}
+
+
+.table-all-cars1 {
+    background-color: #e8e8e8;
+    width: 100%;
+    height: auto;
+    border-radius:  8px;
+    margin-right: 5px;
+    display: block;
+    overflow: auto;
+
+
+}
+
+.table-all-cars2 {
+    background-color: white;
+    width: 80%;
+    height: 150px;
+    border-radius:  8px;
+    margin-left: 5px;
+
+}
+
+.deleteButton {
+    background-color: red;
+    border: none;
+    color: white;
+    width: 80px;
+    height: 30px;
+
+}
+
+.deleteButton:hover {
+    background-color: #cc0000;
+}
+
+.repairButton {
+     background-color: #ffdb4d;
+     border: none;
+     color: black;
+     width: 80px;
+     height: 30px;
+
+}
+.repairButton:hover {
+    background-color: #ffcc00;
+}
+
+.editButton {
+    background-color: #0088cc;
+    border: none;
+    color: white;
+    width: 80px;
+    height: 30px;
+}
+
+.editButton:hover {
+     background-color: #006699;
+ }
+
+.freeButton {
+    background-color: #00b300;
+    border: none;
+    color: white;
+    width: 80px;
+    height: 30px;
+}
+
+.freeButton:hover {
+    background-color: #008000;
+}
+
+.table2 {
+    margin-top: 10px;
+    font-size: 20px;
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
+.table2 th {
+    border-bottom: 2px solid black;
+
+}
+.table2 td {
+    padding: 5px 10px;
+	text-align: center;
+	width: 100px;
+}
+
+.transport_route {
+    font-weight: bold;
+    color: #0088cc;
+}
+
+.free_transport {
+    font-weight: bold;
+    color: #00b300;
+}
+
+.repair_transport {
+    font-weight: bold;
+    color: #e6b800;
+}
+
+.addButton {
+    background-color: #074191;
+    border: none;
+    color: white;
+    width: 90px;
+    height: 35px;
+}
+
+.addButton:hover {
+    background-color: #001f41;
+
+}
+
+.close {
+    margin-right: 80px;
+    float:right;
+}
+
+.close a {
+    color: #828282;
+}

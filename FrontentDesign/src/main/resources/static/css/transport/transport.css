@@ -1,0 +1,60 @@
+.transport-menu {
+      height: 35px;
+      width: 80%; /* Можно задать любую другую ширину блока */
+      padding: 3px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+      float: right;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      border-bottom: 2px solid #e88a44;
+
+
+
+}
+
+
+.header-menu {
+    height: 30px;
+    width: 150px;
+    margin-left: 10px;
+    padding: 2px;
+
+
+}
+
+
+.header-menu a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    font-family: Times New Roman;
+
+
+}
+
+
+.header-menu:hover {
+  background-color: #bfbfbf;
+  border-bottom: 2px solid #e88a44;
+}
+
+.create-transport-form {
+    margin-left: 700px;
+}
+
+.body-square {
+    padding: 10px;
+    margin-left: 275px;
+    margin-top: 10px;
+    background-color: white;
+    width: 80%;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
