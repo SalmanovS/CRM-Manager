@@ -19,9 +19,9 @@
         <input type="text" id="fmodel" field="*{carModel}" name="carModel" placeholder="Model"/>
         <input type="text" id="lnumber" field="*{carNumber}" name="carNumber" placeholder="Number"/>
         <select id="fbodytype" field="*{bodyType}" name="bodyType">
-            <option value="Furqon">Van</option>
-            <option value="Yarımqoşqu">Semitrailer</option>
-            <option value="Yarımqoşqu-ref">Reefer</option>
+            <option value="Van">Van</option>
+            <option value="Semitrailer">Semitrailer</option>
+            <option value="Reefer">Reefer</option>
         </select>
         <input type="number" step="0.01"  lang="en_EN" id="fcarryingCapacity" field="*{carryingCapacity}" name="carryingCapacity"
                placeholder="Carrying capacity"/>
@@ -65,7 +65,7 @@
             <td th:text="${car.bodyType}"></td>
             <td th:text="${car.carryingCapacity}"></td>
             <td th:text="${car.carStatus}"> </td>
-        <td><form action="#"  th:method="put">
+        <td><form th:action="@{'/transport/edit/{id}'(id=${car.id})}"th:method="get">
             <button class="editButton" type="submit" value="edit">Edit</button></form></td>
         <td><form action="#" th:action="@{'/transport/changeStatusFree/{id}'(id=${car.id})}" th:method="put">
             <button class="freeButton" type="submit" value="free">Free</button></form></td>
@@ -77,7 +77,7 @@
             <td th:text="${car.bodyType}"></td>
             <td th:text="${car.carryingCapacity}"></td>
             <td th:text="${car.carStatus}"> </td>
-            <td><form action="#"  th:method="put">
+            <td><form  th:action="@{'/transport/edit/{id}'(id=${car.id})}"th:method="get">
                 <button class="editButton" type="submit" value="edit">Edit</button></form></td>
             <td><form action="#" th:action="@{'/transport/changeStatusRepair/{id}'(id=${car.id})}" th:method="put">
             <button class="repairButton" type="submit" value="repair">In repair</button></form></td>

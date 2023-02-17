@@ -26,8 +26,8 @@ public class TransportController {
         return "transports/transportIndex";
     }
 
-    @RequestMapping("edit/{id}")
-    public String editTransport(@PathVariable int id, Model model){
+    @GetMapping("edit/{id}")
+    public String showCar(@PathVariable int id, Model model){
         RestTemplate restTemplate = new RestTemplate();
         Car editCar = restTemplate.getForObject("http://localhost:8081/api/cars/{id}",Car.class, id);
         model.addAttribute("editCar",editCar);
@@ -35,9 +35,17 @@ public class TransportController {
 
     }
 
-    @PutMapping("editCar")
-    public String editCar(){
-
+    @PutMapping("updateCar/{id}")
+    public String editCar(@PathVariable int id, @ModelAttribute Car updateCar){
+        RestTemplate restTemplate = new RestTemplate();
+        Car car = restTemplate.getForObject("http://localhost:8081/api/cars/{id}",Car.class, id);
+        car.setCarBrand(updateCar.getCarBrand());
+        car.setCarModel(updateCar.getCarModel());
+        car.setCarNumber(updateCar.getCarNumber());
+        car.setBodyType(updateCar.getBodyType());
+        car.setCarryingCapacity(updateCar.getCarryingCapacity());
+        car.setCarStatus(updateCar.getCarStatus());
+        restTemplate.put("http://localhost:8081/api/cars/", car);
         return "redirect:/transport/";
     }
 

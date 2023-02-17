@@ -41,17 +41,22 @@
             <th>Carrying capacity</th>
             <th>Status</th>
 
-
         </tr>
         <tr>
-            <form action="#"  th:object="${editCar}" method="put">
+            <form   th:action="@{'/transport/updateCar/{id}'(id=${editCar.id})}" th:object="${editCar}" th:method="put">
+              <input type="hidden" name="id" th:field="*{id}" />
                 <td><input type="text" name="carBrand" th:field="*{carBrand}" /></td>
                 <td><input type="text" name="carModel" th:field="*{carModel}" /></td>
                 <td><input type="text" name="carNumber" th:field="*{carNumber}" /></td>
-                <td><input type="text" name="bodyType" th:field="*{bodyType}" /></td>
+
+                <td><select th:field="*{bodyType}" name="bodyType">
+                    <option value="Van">Van</option>
+                    <option value="Semitrailer">Semitrailer</option>
+                    <option value="Reefer">Reefer</option>
+                </select></td>
                 <td><input type="number" lang="en" name="carryingCapacity" th:field="*{carryingCapacity}" /></td>
                 <td><input type="text"  name="carStatus" th:field="*{carStatus}" readonly/></td>
-                <button class="editButton" type="submit" value="edit">Edit</button></form></td>
+                <td><button class="editButton" type="submit" >Save</button></form></td>
          </tr>
     </table>
     </div>
