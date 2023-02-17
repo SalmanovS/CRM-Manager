@@ -1,0 +1,26 @@
+.menu-block {
+    width: 80%;
+    height: 35px;
+    float: right;
+    border-bottom: 2px solid #e88a44;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    padding: 10px;
+
+}
+
+.add-driver-button {
+    width: 120px;
+    height: 40px;
+    background-color: #e88a44;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 5px;
+
+
+}
+.add-driver-button:hover {
+    background-color: #cc6719;
+
+}

@@ -1,7 +1,6 @@
 package com.ManagerCRM.FrontentDesign.Model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
+
 
 import java.util.Date;
 
@@ -19,15 +18,19 @@ public class Driver {
 
     private Date employmetDate;
 
-    private Car carId;
+    private String drivingCategory;
+
+    private String driverStatus = "Free";
     public Driver() {
     }
 
-    public Driver(String surname, String name, String phoneNumber, Date employmetDate) {
+    public Driver(String surname, String name, String phoneNumber, Date employmetDate, String drivingCategory, String driverStatus) {
         this.surname = surname;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.employmetDate = employmetDate;
+        this.drivingCategory= drivingCategory;
+        this.driverStatus = driverStatus;
     }
 
     public int getDriverId() {
@@ -50,9 +53,9 @@ public class Driver {
         return employmetDate;
     }
 
-    public Car getCarId() {
-        return carId;
-    }
+    public String getDrivingCategory(){return  drivingCategory;}
+    public String getDriverStatus(){return driverStatus;}
+
 
     public void setSurname(String surname) {
         this.surname = surname;
@@ -69,16 +72,19 @@ public class Driver {
     public void setEmploymetDate(Date employmetDate) {
         this.employmetDate = employmetDate;
     }
+    public void setDrivingCategory(String drivingCategory){this.drivingCategory=drivingCategory;}
+
+    public void setDriverStatus (String driverStatus){this.driverStatus = driverStatus;}
 
     @Override
     public String toString() {
         return "Driver{" +
-                "driverId=" + driverId +
-                ", surname='" + surname + '\'' +
+                "surname='" + surname + '\'' +
                 ", name='" + name + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", employmetDate=" + employmetDate +
-                ", carId=" + carId +
+                ", drivingCategory='" + drivingCategory + '\'' +
+                ", driverStatus='" + driverStatus + '\'' +
                 '}';
     }
 }
