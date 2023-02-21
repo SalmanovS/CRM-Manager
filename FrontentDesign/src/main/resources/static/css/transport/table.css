@@ -8,8 +8,9 @@
 .table th {
 	font-weight: bold;
 	padding: 5px;
-	background: #e88a44;
+	background: #404040;
 	border: 1px solid #dddddd;
+	color: white;
 }
 .table td{
 	padding: 5px 10px;

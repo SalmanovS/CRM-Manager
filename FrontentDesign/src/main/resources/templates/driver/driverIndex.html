@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Drivers</title>
+    <link href="/static/css/driver/table.css" th:href="@{/css/driver/table.css}" rel="stylesheet" />
     <link href="/static/css/navbar.css" th:href="@{/css/navbar.css}" rel="stylesheet" />
     <link href="/static/css/driver/driverMenu.css" th:href="@{/css/driver/driverMenu.css}" rel="stylesheet" />
     <link rel="stylesheet" href="https://kit.fontawesome.com/206cb32d9c.css"  crossorigin="anonymous">
@@ -16,7 +17,21 @@
 <div th:insert="fragments/home :: top-three-blocks"></div>
 <div class="menu-block">
     <button class="add-driver-button"> <i class="fa-solid fa-user-plus"></i> ADD DRIVER</button>
+</div>
 
+<div class="table-block">
+    <table class="table">
+        <tr>
+
+            <th>Name  Surname</th>
+            <th>Info</th>
+        </tr>
+        <tr th:each="driver: ${allDrivers}">
+            <td th:text="${driver.name} +' '+ ${driver.surname}"></td>
+            <td><form th:action="@{'/driver/info/{id}'(id=${driver.driverId})}"th:method="get">
+                <button class="driver-info-button" type="submit"><i class="fa-solid fa-circle-info"></i></button></form></td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>

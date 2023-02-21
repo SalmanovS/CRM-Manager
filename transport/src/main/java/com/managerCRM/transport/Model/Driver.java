@@ -3,6 +3,8 @@ package com.managerCRM.transport.Model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity(name = "drivers")
@@ -18,7 +20,7 @@ public class Driver {
     @Column(name = "driver_phone_number")
     private String phoneNumber;
     @Column(name = "driver_employment_date")
-    private Date employmetDate;
+    private LocalDate employmetDate;
     @Column(name = "driving_category")
     private String drivingCategory;
     @Column(name = "driver_status")
@@ -26,7 +28,7 @@ public class Driver {
     public Driver() {
     }
 
-    public Driver(String surname, String name, String phoneNumber, Date employmetDate, String drivingCategory, String driverStatus) {
+    public Driver(String surname, String name, String phoneNumber, LocalDate employmetDate, String drivingCategory, String driverStatus) {
         this.surname = surname;
         this.name = name;
         this.phoneNumber = phoneNumber;
@@ -51,7 +53,7 @@ public class Driver {
         return phoneNumber;
     }
 
-    public Date getEmploymetDate() {
+    public LocalDate getEmploymetDate() {
         return employmetDate;
     }
 
@@ -71,7 +73,7 @@ public class Driver {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setEmploymetDate(Date employmetDate) {
+    public void setEmploymetDate(LocalDate employmetDate) {
         this.employmetDate = employmetDate;
     }
     public void setDrivingCategory(String drivingCategory){this.drivingCategory=drivingCategory;}

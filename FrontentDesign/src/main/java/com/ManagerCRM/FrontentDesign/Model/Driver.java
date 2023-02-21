@@ -2,6 +2,8 @@ package com.ManagerCRM.FrontentDesign.Model;
 
 
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 
@@ -16,7 +18,7 @@ public class Driver {
 
     private String phoneNumber;
 
-    private Date employmetDate;
+    private LocalDate employmetDate;
 
     private String drivingCategory;
 
@@ -24,7 +26,7 @@ public class Driver {
     public Driver() {
     }
 
-    public Driver(String surname, String name, String phoneNumber, Date employmetDate, String drivingCategory, String driverStatus) {
+    public Driver(String surname, String name, String phoneNumber, LocalDate employmetDate, String drivingCategory, String driverStatus) {
         this.surname = surname;
         this.name = name;
         this.phoneNumber = phoneNumber;
@@ -49,7 +51,7 @@ public class Driver {
         return phoneNumber;
     }
 
-    public Date getEmploymetDate() {
+    public LocalDate getEmploymetDate() {
         return employmetDate;
     }
 
@@ -69,7 +71,7 @@ public class Driver {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setEmploymetDate(Date employmetDate) {
+    public void setEmploymetDate(LocalDate employmetDate) {
         this.employmetDate = employmetDate;
     }
     public void setDrivingCategory(String drivingCategory){this.drivingCategory=drivingCategory;}
