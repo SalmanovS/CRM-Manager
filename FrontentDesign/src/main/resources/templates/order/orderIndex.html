@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Orders</title>
+  <link href="/static/css/driver/table.css" th:href="@{/css/driver/table.css}" rel="stylesheet" />
+  <link href="/static/css/navbar.css" th:href="@{/css/navbar.css}" rel="stylesheet" />
+  <link href="/static/css/driver/driverMenu.css" th:href="@{/css/driver/driverMenu.css}" rel="stylesheet" />
+  <link rel="stylesheet" href="https://kit.fontawesome.com/206cb32d9c.css"  crossorigin="anonymous">
+  <link href="/static/css/icons/fontawesome.css" th:href="@{/css/icons/fontawesome.css}"rel="stylesheet">
+  <link href="/static/css/icons/brands.css" th:href="@{/css/icons/brands.css}"rel="stylesheet">
+  <link href="/static/css/icons/solid.css" th:href="@{/css/icons/solid.css}"rel="stylesheet">
+</head>
+<body>
+<div><div th:insert="fragments/home :: navbar"></div></div>
+<div th:insert="fragments/home :: top-three-blocks"></div>
+<div class="menu-block">
+  <button class="add-driver-button"> <i class="fa-solid fa-user-plus"></i> Add Orders</button>
+</div>
+
+</body>
+</html>

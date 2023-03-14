@@ -1,5 +1,8 @@
 package com.ManagerCRM.FrontentDesign.Model;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+
 public class Car {
     public Car() {
     }
@@ -14,15 +17,17 @@ public class Car {
     }
 
     private int id;
+    @NotBlank(message = "Please enter Brand")
     private String carBrand;
     private String carModel;
-
+    @Pattern(regexp ="^\\d\\d-[A-Z][A-Z]-\\d\\d\\d$", message = "Please enter the number according to the template: 10-MN-829")
     private String carNumber;
     private String bodyType;
 
     private double carryingCapacity;
 
     private String carStatus = "Free";
+    private Driver driver;
 
     public int getId() {
         return id;
@@ -52,6 +57,10 @@ public class Car {
         return carStatus;
     }
 
+    public Driver getDriver() {
+        return driver;
+    }
+
     public void setCarBrand(String carBrand) {
         this.carBrand = carBrand;
     }
@@ -76,6 +85,10 @@ public class Car {
         this.carStatus = carStatus;
     }
 
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
     @Override
     public String toString() {
         return "Car{" +
@@ -86,6 +99,7 @@ public class Car {
                 ", bodyType='" + bodyType + '\'' +
                 ", carryingCapacity=" + carryingCapacity +
                 ", carStatus='" + carStatus + '\'' +
+                ", driver=" + driver +
                 '}';
     }
 }

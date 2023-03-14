@@ -1,6 +1,8 @@
 package com.managerCRM.transport.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity(name = "cars")
 public class Car {
@@ -21,6 +23,7 @@ public class Car {
     private int id;
 
     @Column(name = "car_brand")
+
     private String carBrand;
     @Column(name="car_model")
     private String carModel;
@@ -34,6 +37,10 @@ public class Car {
 
     @Column(name = "car_status")
     private String carStatus;
+    @OneToOne
+    @JoinColumn(name = "driver_id")
+    private Driver driver;
+
 
     public int getId() {
         return id;
@@ -63,6 +70,10 @@ public class Car {
         return carStatus;
     }
 
+    public Driver getDriver() {
+        return driver;
+    }
+
     public void setCarBrand(String carBrand) {
         this.carBrand = carBrand;
     }
@@ -87,6 +98,10 @@ public class Car {
         this.carStatus = carStatus;
     }
 
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
     @Override
     public String toString() {
         return "Car{" +
@@ -97,6 +112,7 @@ public class Car {
                 ", bodyType='" + bodyType + '\'' +
                 ", carryingCapacity=" + carryingCapacity +
                 ", carStatus='" + carStatus + '\'' +
+                ", driver=" + driver +
                 '}';
     }
 }

@@ -23,6 +23,7 @@ public class Driver {
     private String drivingCategory;
 
     private String driverStatus = "Free";
+    private Car car;
     public Driver() {
     }
 
@@ -58,6 +59,9 @@ public class Driver {
     public String getDrivingCategory(){return  drivingCategory;}
     public String getDriverStatus(){return driverStatus;}
 
+    public Car getCar() {
+        return car;
+    }
 
     public void setSurname(String surname) {
         this.surname = surname;
@@ -78,15 +82,21 @@ public class Driver {
 
     public void setDriverStatus (String driverStatus){this.driverStatus = driverStatus;}
 
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
     @Override
     public String toString() {
         return "Driver{" +
-                "surname='" + surname + '\'' +
+                "driverId=" + driverId +
+                ", surname='" + surname + '\'' +
                 ", name='" + name + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", employmetDate=" + employmetDate +
                 ", drivingCategory='" + drivingCategory + '\'' +
                 ", driverStatus='" + driverStatus + '\'' +
+                ", car=" + car +
                 '}';
     }
 }

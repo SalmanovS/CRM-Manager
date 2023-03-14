@@ -11,8 +11,12 @@
   <link href="/static/css/icons/fontawesome.css" th:href="@{/css/icons/fontawesome.css}"rel="stylesheet">
   <link href="/static/css/icons/brands.css" th:href="@{/css/icons/brands.css}"rel="stylesheet">
   <link href="/static/css/icons/solid.css" th:href="@{/css/icons/solid.css}"rel="stylesheet">
+
+
 </head>
 <body>
+
+
 <div><div th:insert="fragments/home :: navbar"></div></div>
 <div th:insert="fragments/home :: top-three-blocks"></div>
 <div class="menu-block">
@@ -49,8 +53,10 @@
 </table>
 <div class="edit-block">
   <button class="info-edit-button"type="submit"> <i class="fa-solid fa-pen-to-square"></i> Edit</button>
-</div>
-</div>
 
+  <input type="date" id="dt" >
+</div>
+</div>
+<script type="text/javascript"  th:src="@{/js/driver/calendar.js}"></script>
 </body>
 </html>

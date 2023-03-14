@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New order</title>
+  <link href="/static/css/transport/table.css" th:href="@{/css/transport/table.css}" rel="stylesheet" />
+  <link href="/static/css/navbar.css" th:href="@{/css/navbar.css}" rel="stylesheet" />
+  <link href="/static/css/driver/driverMenu.css" th:href="@{/css/driver/driverMenu.css}" rel="stylesheet" />
+  <link rel="stylesheet" href="https://kit.fontawesome.com/206cb32d9c.css"  crossorigin="anonymous">
+  <link href="/static/css/icons/fontawesome.css" th:href="@{/css/icons/fontawesome.css}"rel="stylesheet">
+  <link href="/static/css/icons/brands.css" th:href="@{/css/icons/brands.css}"rel="stylesheet">
+  <link href="/static/css/icons/solid.css" th:href="@{/css/icons/solid.css}"rel="stylesheet">
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{/js/order/main.js}"></script>
+<div><div th:insert="fragments/home :: navbar"></div></div>
+<div th:insert="fragments/home :: top-three-blocks"></div>
+<div class="menu-block">
+  <button class="add-driver-button"> <i class="fa-solid fa-user-plus"></i> Add Orders</button>
+</div>
+<div class="table">
+  <table>
+    <tr>
+      <th>Order number</th>
+      <th>Route Length</th>
+      <th>Cargo Name</th>
+      <th>Cargo Weight</th>
+    </tr>
+    <td> <input type="text" th:value="${orderNumber}" readonly></td>
+    <td> <input class="routeLength" type="text" readonly></td>
+    <td> <input type="text" ></td>
+    <td> <input id="cargoWeight" onchange="orderCoast()" type="number" min="100"></td>
+    <tr>
+    <th>Departure Address</th>
+    <th>Destination Address</th>
+    <th>Order Cost</th>
+    <th>Driver</th>
+    <th>Transport</th>
+    </tr>
+
+    <tr>
+      <td> <input class = "startLocation" type="text"></td>
+      <td> <input class ="endLocation" type="text" onblur="endLocation()" ></td>
+      <td> <input id="orderCoast"  type="text" readonly></td>
+      <td> <input id="driver" type="text" readonly placeholder="select transport"></td>
+      <td><select id="car" oninput="ept()">
+        <option selected disabled></option>
+      <option   th:each="car, item: ${allCars}" th:value="${car.driver.name}+ ' ' + ${car.driver.surname}" th:text="${car.carBrand} + ' ' + ${car.carModel} + ' ' +[+ ${car.carNumber}+]">
+
+    </select></td>
+    </tr>
+
+  </table>
+
+</div>
+
+<script type="text/javascript"  th:src="@{/js/order/order.js}"></script>
+<script type="text/javascript" th:src="@{/js/order/main.js}"></script>
+
+</body>
+</html>

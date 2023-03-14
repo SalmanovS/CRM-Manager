@@ -25,6 +25,9 @@ public class Driver {
     private String drivingCategory;
     @Column(name = "driver_status")
     private String driverStatus;
+    @OneToOne(mappedBy = "driver")
+    @JsonIgnore
+    private Car car;
     public Driver() {
     }
 
@@ -60,6 +63,9 @@ public class Driver {
     public String getDrivingCategory(){return  drivingCategory;}
     public String getDriverStatus(){return driverStatus;}
 
+    public Car getCar() {
+        return car;
+    }
 
     public void setSurname(String surname) {
         this.surname = surname;
@@ -79,6 +85,10 @@ public class Driver {
     public void setDrivingCategory(String drivingCategory){this.drivingCategory=drivingCategory;}
 
     public void setDriverStatus (String driverStatus){this.driverStatus = driverStatus;}
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
 
     @Override
     public String toString() {
